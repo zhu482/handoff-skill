@@ -1,30 +1,31 @@
 # 接棒
 
-接棒 is an agent skill for managing multi-project handoffs and workspaces.
+接棒是一个用于管理多项目交接和工作区的 agent 技能。
 
-It helps an AI agent start from the project context instead of an empty chat box:
+它帮助 AI agent 从项目上下文开始工作，而不是从一个空白聊天框开始：
 
-- identify or create the right project workspace
-- ingest meeting notes, webpages, PDFs, screenshots, chats, and raw materials
-- read project state before doing work
-- keep decisions, rejected directions, materials, todos, and handoff notes visible
-- propose writeback after a task without silently turning temporary thoughts into long-term rules
+- 识别或创建正确的项目工作区
+- 摄取会议纪要、网页、PDF、截图、聊天记录和原始材料
+- 做事前先读取项目状态
+- 让决策、被否掉的方向、材料、待办和交接记录保持可见
+- 任务结束后提出写回建议，而不是悄悄把临时想法变成长期规则
 
-## Why this exists
+## 为什么需要它
 
-Agents often have many tools but still behave like a new teammate every time:
+Agent 经常有很多工具，但每次表现得还是像一个刚入职的新同事：
 
-- they forget what was already rejected
-- they restart from old assumptions
-- they summarize materials without updating the project state
-- they do work before reading the current completion standard
+- 忘了哪些方向已经被否掉
+- 从旧假设重新开始
+- 只总结材料，却不更新项目状态
+- 还没读取当前完成标准就开始干活
 
-This skill adds a lightweight project "worksite" around the agent.
-In plain Chinese: it makes the agent 接住上一棒 before doing the next task.
+这个技能给 agent 加了一个轻量级的项目“现场”。
 
-## Workspace Structure
+说白了：它让 agent 在做下一件事之前，先接住上一棒。
 
-Default root:
+## 工作区结构
+
+默认根目录：
 
 ```text
 Agent_Workspace/
@@ -41,7 +42,7 @@ Agent_Workspace/
     项目B/
 ```
 
-Each project contains:
+每个项目包含：
 
 ```text
 项目名/
@@ -57,15 +58,15 @@ Each project contains:
   09_接班记录.md
 ```
 
-## Quick Start
+## 快速开始
 
-Initialize a workspace:
+初始化一个工作区：
 
 ```bash
 python3 scripts/init_workspace.py --root Agent_Workspace
 ```
 
-Create a project:
+创建一个项目：
 
 ```bash
 python3 scripts/create_project.py \
@@ -74,50 +75,50 @@ python3 scripts/create_project.py \
   --keywords "课程,试运行,学员反馈"
 ```
 
-Validate the workspace:
+验证工作区：
 
 ```bash
 python3 scripts/validate_workspace.py --root Agent_Workspace
 ```
 
-## Agent Usage
+## Agent 使用方式
 
-Ask the agent to use the skill before doing long-running project work:
-
-```text
-Use 接棒 to identify the project, read the current worksite, then continue this task.
-```
-
-For material ingestion:
+在开始长期项目工作前，要求 agent 使用这个技能：
 
 ```text
-Use 接棒 to put this material into the right project worksite. Do not just summarize it.
+使用接棒来识别项目，读取当前项目现场，然后继续这个任务。
 ```
 
-For task closeout:
+用于材料摄取：
 
 ```text
-Use 接棒 to propose what should be written back to the project worksite.
+使用接棒把这份材料放进正确的项目现场。不要只是总结它。
 ```
 
-## Important Rules
+用于任务收尾：
 
-- Do not write into a project when project identity is ambiguous.
-- Do not overwrite old decisions; append dated records.
-- Do not save secrets, tokens, cookies, private keys, or sensitive raw materials into public outputs.
-- Do not turn single-project preferences into global methods unless they have been reused across projects.
-- Always validate the workspace structure after creating or updating project files.
+```text
+使用接棒提出哪些内容应该写回项目现场。
+```
 
-## Files
+## 重要规则
 
-- `SKILL.md`: the skill instruction file
-- `scripts/init_workspace.py`: create the root workspace structure
-- `scripts/create_project.py`: create a project with standard files
-- `scripts/validate_workspace.py`: validate workspace and project structure
-- `templates/`: project and prompt templates
-- `examples/`: example workflows
-- `agents/openai.yaml`: example agent metadata
+- 项目身份不明确时，不要写入项目。
+- 不要覆盖旧决策；追加带日期的记录。
+- 不要把密钥、token、cookie、私钥或敏感原始材料保存到公开输出里。
+- 不要把单个项目的偏好变成全局方法，除非它已经在多个项目中复用过。
+- 创建或更新项目文件后，始终验证工作区结构。
 
-## License
+## 文件
+
+- `SKILL.md`：技能说明文件
+- `scripts/init_workspace.py`：创建根工作区结构
+- `scripts/create_project.py`：创建带标准文件的项目
+- `scripts/validate_workspace.py`：验证工作区和项目结构
+- `templates/`：项目模板和提示词模板
+- `examples/`：示例工作流
+- `agents/openai.yaml`：示例 agent 元数据
+
+## 许可证
 
 MIT
