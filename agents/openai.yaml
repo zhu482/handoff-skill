@@ -1,6 +1,6 @@
 interface:
-  display_name: "项目工作现场中控"
-  short_description: "多项目接班、材料入库和任务回写中控。"
-  default_prompt: "Use $project-workspace-orchestrator to identify or create the project workspace, ingest materials, read the project context before work, and propose writeback after the task."
+  display_name: "接棒"
+  short_description: "让 Agent 开工前接住项目现场，收工后留下该留下的东西。"
+  default_prompt: "Use $接棒 to identify or create the project workspace, ingest materials, read the project context before work, and propose writeback after the task."
 policy:
   allow_implicit_invocation: true

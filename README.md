@@ -1,6 +1,6 @@
-# Project Workspace Orchestrator
+# 接棒
 
-Project Workspace Orchestrator is an agent skill for managing multi-project workspaces.
+接棒 is an agent skill for managing multi-project handoffs and workspaces.
 
 It helps an AI agent start from the project context instead of an empty chat box:
 
@@ -20,6 +20,7 @@ Agents often have many tools but still behave like a new teammate every time:
 - they do work before reading the current completion standard
 
 This skill adds a lightweight project "worksite" around the agent.
+In plain Chinese: it makes the agent 接住上一棒 before doing the next task.
 
 ## Workspace Structure
 
@@ -84,19 +85,19 @@ python3 scripts/validate_workspace.py --root Agent_Workspace
 Ask the agent to use the skill before doing long-running project work:
 
 ```text
-Use project-workspace-orchestrator to identify the project, read the current worksite, then continue this task.
+Use 接棒 to identify the project, read the current worksite, then continue this task.
 ```
 
 For material ingestion:
 
 ```text
-Use project-workspace-orchestrator to put this material into the right project worksite. Do not just summarize it.
+Use 接棒 to put this material into the right project worksite. Do not just summarize it.
 ```
 
 For task closeout:
 
 ```text
-Use project-workspace-orchestrator to propose what should be written back to the project worksite.
+Use 接棒 to propose what should be written back to the project worksite.
 ```
 
 ## Important Rules

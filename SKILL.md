@@ -1,9 +1,9 @@
 ---
-name: project-workspace-orchestrator
-description: Manage multi-project agent workspaces. Use when users want to start/continue a project, create or update a project workspace, identify which project a task/material belongs to, archive meeting notes/web pages/PDFs/screenshots/chats, ingest materials, read project context before work, propose writeback after work, or maintain project handoff files. 中文触发：项目中控、项目现场、继续项目、材料入库、会议记录归档、素材索引、开工接班、任务回写、多项目管理。
+name: 接棒
+description: Manage multi-project agent handoffs and workspaces. Use when users want to start/continue a project, create or update a project workspace, identify which project a task/material belongs to, archive meeting notes/web pages/PDFs/screenshots/chats, ingest materials, read project context before work, propose writeback after work, or maintain project handoff files. 中文触发：接棒、项目接班、项目现场、继续项目、材料入库、会议记录归档、素材索引、开工接班、任务回写、多项目管理。
 ---
 
-# 项目工作现场中控
+# 接棒
 
 ## 定位
 
@@ -12,7 +12,7 @@ description: Manage multi-project agent workspaces. Use when users want to start
 一句话：
 
 ```text
-让 Agent 每次不是从聊天框开始，而是从项目现场开始。
+让 Agent 每次不是从聊天框重新开始，而是接住项目上一棒。
 ```
 
 ## 默认工作区
